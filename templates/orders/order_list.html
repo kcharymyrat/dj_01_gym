@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}{{request.user}}My Orders{% endblock title %}
+
+{% block content %}
+    <ul>
+    {% for product in orders %}
+        <li>{{product.product.title}}: ${{product.product.price}} <a href="{% url 'products:product_details' pk=product.product.id %}" class="btn btn-sm btn-primary">View</a></li>
+    {% endfor %}
+    </ul>
+{% endblock content %}

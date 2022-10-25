@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Checkout order{% endblock title %}
+
+
+{% block content %}
+    <h3>{{obj.product.title}}</h3>
+    <p>{{obj.product.content}}</p>
+    <div><img src="{{obj.product.image.url}}" alt="{{obj.product.title}}"></div>
+    <p><strong>Subtotal: </strong> ${{obj.subtotal}}</p>
+    <p><strong>Tax: </strong> ${{obj.tax}}</p>
+    <p><strong>Total: </strong>$ {{obj.total}}</p>
+    
+    {% include 'snippets/forms.html' with button_name='Puchase' %}
+{% endblock content %}

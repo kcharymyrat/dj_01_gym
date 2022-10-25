@@ -1,0 +1,7 @@
+<form action="." method="post" {{enctype}}>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-success">
+        {% if button_name %}{{button_name}}{% else %}Submit{% endif %}
+    </button>
+</form>
